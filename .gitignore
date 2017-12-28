@@ -1,0 +1,16 @@
+.gradle
+.idea
+build
+classes
+*.iml
+rebel.xml
+out
+log/
+/is_scheduled.properties
+target
+.settings
+.classpath
+.project
+bin
+stopcar/src/test/resources/doc
+templatev10.dat

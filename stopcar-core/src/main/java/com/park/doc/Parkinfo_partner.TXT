@@ -1,0 +1,16 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id||long|
+|pi_id|停车场主键IDp_id|long|
+|pu_id|商户基本信息表主键IDpu_id|long|
+|pu_nd|商户编号|String|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|is_effect|是否启用（0：启用1：弃用）|int|
+|area_code|地区区域编码|String|
+|note|备注|String|
+|clearing_type|结算方案(0：不结算1：全额结算2：按基数结算)|int|
+|clearing_percentage|结算比例|double|
+|clearing_base|结算基数(整数单位分)|int|
+

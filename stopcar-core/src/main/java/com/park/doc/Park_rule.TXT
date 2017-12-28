@@ -1,0 +1,13 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|pr_id|主键ID|long|
+|pr_nd|唯一标识符ND|String|
+|pi_id|停车场主键ID|long|
+|area_code|停车场地址区域编码|String|
+|state|是否有效（0：无效1：有效）|int|
+|json_array|规则JSONArray数组|String|
+|ctime|服务器接受该数据时间|java.util.Date|
+|utime|规则修改时间|java.util.Date|
+|note|备注|String|
+

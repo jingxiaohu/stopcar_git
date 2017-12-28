@@ -1,0 +1,13 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|ui_id|用户ID|long|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|lng|经度|String|
+|lat|纬度|String|
+|flag|登陆设备类型0:android1:IOS2:web3:pc|int|
+|ull_ip|登陆IP|String|
+|note|备注|String|
+

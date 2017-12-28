@@ -1,0 +1,15 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|order_id|订单号|String|
+|server_type|订单服务器端支付类型0：未指定1:支付宝2：微信3：银联4：钱包5:龙支付6:ETC快捷支付7：扫脸支付8：指纹支付9：指静脉支付|int|
+|client_type|订单接收到客户端支付类型0：未指定1：现金支付2：线上支付|int|
+|money|订单金额单位分|long|
+|ctime|创建时间|java.util.Date|
+|pi_id|停车场主键ID|long|
+|area_code|地址区域编码|String|
+|pi_name|停车场名称|String|
+|is_asyn|是否是异步传输(0:同步1：异步)|int|
+|note|备注|String|
+

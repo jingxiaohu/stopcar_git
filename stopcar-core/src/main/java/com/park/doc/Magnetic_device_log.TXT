@@ -1,0 +1,16 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id||long|
+|pi_id|停车场主键ID|long|
+|area_code|地址编码|String|
+|gov_num|政府拟定的车位编码（例如：ASD123）|String|
+|car_dev_num|车位设备编码|String|
+|android_dev_num|android板子设备编码|String|
+|state|车位设备状态（0：无车1：有车2：故障）|int|
+|ctime|创建时间|java.util.Date|
+|note|备注|String|
+|carport_total|车位总数|int|
+|carport_yet|已停车位数|int|
+|carport_space|空余车位数|int|
+

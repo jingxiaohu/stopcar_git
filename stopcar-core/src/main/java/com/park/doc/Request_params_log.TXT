@@ -1,0 +1,11 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|method_name|请求方法名称|String|
+|duration|请求消耗时长|long|
+|params_json|请求参数JSON字符串|String|
+|ctime|创建时间|java.util.Date|
+|note|备注|String|
+|reponse_json|返回数据JSON字符串|String|
+

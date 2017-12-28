@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+<title>Insert title here</title>  
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>  
+</head>  
+<script type="text/javascript">  
+$(function(){     
+    $.ajax({
+        type : "get",
+        async:false,
+        url : "http://localhost:8080/v1/get_parkinfo_forweb.php?lat=28.88549&lng=105.45148&distance=1000&area_code=510105",
+        dataType : "jsonp",//数据类型为jsonp
+        jsonp: "jsonpCallback",//服务端用于接收callback调用的function名的参数
+        jsonpCallback:"jsonp_result",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+        success : function(data){
+            $("#showcontent").text("Result:"+data.result)
+        },
+        error:function(){
+            alert('fail');
+        }
+    });
+});  
+</script>  
+<body>  
+<div id="showcontent">Result:</div>  
+</body>  
+</html>

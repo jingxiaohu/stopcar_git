@@ -1,0 +1,17 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|uc_id||long|
+|ui_id|用户ID|long|
+|car_code|车牌号码|String|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|run_url|行驶证照片|String|
+|is_default|是否是默认车牌号选定:0：不是1：是默认车牌|int|
+|car_brand|车辆品牌|String|
+|uc_color|车辆颜色:0未定1：黑色2：白色3：银色4：金色5：红色6：黄色7：绿色8：蓝色9：橙色10：灰色|int|
+|note|备注|String|
+|ui_nd|用户唯一标识uuid|String|
+|ui_tel|用户电话号码|String|
+|run_code|行驶证号码|String|
+

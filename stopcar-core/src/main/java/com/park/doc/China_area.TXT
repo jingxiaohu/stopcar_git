@@ -1,0 +1,12 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id||int|
+|area_code|区/县编号|String|
+|area_name|区县名称|String|
+|province_code|省编号|String|
+|province_name|省或者直辖市名称|String|
+|city_code|市代码|String|
+|city_name|市名称|String|
+|father|市编号|String|
+

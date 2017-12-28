@@ -1,0 +1,13 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|fr_id|主键ID|long|
+|pi_id|场地主键ID|long|
+|pd_id|出入口设备主键ID|long|
+|fr_type|故障类型0:摄像头故障1：开闸设备故障|int|
+|fr_desc|故障简述|String|
+|ctime||java.util.Date|
+|utime||java.util.Date|
+|area_code|省市区编号|String|
+|note||String|
+

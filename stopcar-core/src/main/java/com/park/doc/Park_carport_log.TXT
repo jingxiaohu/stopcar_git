@@ -1,0 +1,15 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|pcl_id|主键ID|long|
+|pi_id|停车场主键ID|long|
+|area_code|停车场地址区域编码|String|
+|carport_total|车位总数|int|
+|carport_yet|已停车位数|int|
+|carport_space|空余车位数|int|
+|park_type|停车场类型(停车场类型0：道闸停车场1：占道车场2：露天立体车库停车场)|int|
+|data_flag|上传来源1：普通占道停车场2：地磁占道停车场3：道闸停车场|int|
+|ctime|停车场本地时间|java.util.Date|
+|stime|接收数据时间|java.util.Date|
+|note|备注|String|
+

@@ -1,0 +1,15 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|ui_id|用户主键ID|long|
+|content|反馈信息|String|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|note|备注|String|
+|type|反馈来源（0：app用户反馈1：PDA管理人反馈2：道闸管理人反馈）|int|
+|pi_id|停车场主键ID|long|
+|area_code|地址区域编码|String|
+|pi_name|停车场名称|String|
+|pda_id|PDA设备表的主键ID|long|
+

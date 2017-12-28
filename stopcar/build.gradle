@@ -1,0 +1,186 @@
+apply plugin: 'groovy'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+description = '合并APP、道闸、PDA项目'
+dependencies {
+    compile project(':stopcar-core')
+    compile project(':stopcar-app')
+    compile project(':stopcar-pda')
+    compile project(':stopcar-gate')
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.springframework', name: 'spring-test', version: '4.3.3.RELEASE'
+    testCompile 'org.glassfish:javax.el:3.0.1-b08'
+
+    testCompile group: 'cn.bestwu.gradle', name: 'dbscript-plugin', version: '0.0.1'
+    testCompile group: 'cn.bestwu.gradle', name: 'apidoc-plugin', version: '1.2.4'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.10'
+
+    def tomcatVersion = '7.0.59'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+
+
+tomcat {
+    httpPort = 8080
+    httpsPort = 18443
+    stopPort = 18081
+    ajpPort = 18009
+    contextPath = '/stopcar'
+}
+
+
+task alpha(dependsOn: 'propsToTmp') {
+    doLast {
+        copy {
+            from rootProject.file("config/alpha/application.properties").getAbsolutePath(), rootProject.file("config/alpha/jdbc.properties").getAbsolutePath()
+            into project.file('src/main/webapp/WEB-INF/config/properties/').getAbsolutePath()
+        }
+        copy {
+            from rootProject.file("config/alpha/log4j2.xml").getAbsolutePath()
+            into project.file('src/main/resources/').getAbsolutePath()
+        }
+//        copy {
+//            from rootProject.file("config/alpha/spring.xml").getAbsolutePath()
+//            into project.file('src/main/webapp/WEB-INF/config/spring/').getAbsolutePath()
+//        }
+//        copy {
+//            from rootProject.file("config/alpha/ExpectOrderCheckTask.java").getAbsolutePath()
+//            into rootProject.file('stopcar-core/src/main/java/com/park/task/').getAbsolutePath()
+//        }
+    }
+}
+task beta(dependsOn: 'propsToTmp') {
+    doLast {
+        copy {
+            from rootProject.file("config/beta/application.properties").getAbsolutePath(), rootProject.file("config/beta/jdbc.properties").getAbsolutePath()
+            into project.file('src/main/webapp/WEB-INF/config/properties/').getAbsolutePath()
+        }
+        copy {
+            from rootProject.file("config/beta/log4j2.xml").getAbsolutePath()
+            into project.file('src/main/resources/').getAbsolutePath()
+        }
+//        copy {
+//            from rootProject.file("config/beta/spring.xml").getAbsolutePath()
+//            into project.file('src/main/webapp/WEB-INF/config/spring/').getAbsolutePath()
+//        }
+//        copy {
+//            from rootProject.file("config/beta/ExpectOrderCheckTask.java").getAbsolutePath()
+//            into rootProject.file('stopcar-core/src/main/java/com/park/task/').getAbsolutePath()
+//        }
+    }
+}
+task betalf(dependsOn: 'propsToTmp') {
+    doLast {
+        copy {
+            from rootProject.file("config/beta-lf/application.properties").getAbsolutePath(), rootProject.file("config/beta-lf/jdbc.properties").getAbsolutePath()
+            into project.file('src/main/webapp/WEB-INF/config/properties/').getAbsolutePath()
+        }
+        copy {
+            from rootProject.file("config/beta-lf/log4j2.xml").getAbsolutePath()
+            into project.file('src/main/resources/').getAbsolutePath()
+        }
+//        copy {
+//            from rootProject.file("config/betalf/spring.xml").getAbsolutePath()
+//            into project.file('src/main/webapp/WEB-INF/config/spring/').getAbsolutePath()
+//        }
+//        copy {
+//            from rootProject.file("config/betalf/ExpectOrderCheckTask.java").getAbsolutePath()
+//            into rootProject.file('stopcar-core/src/main/java/com/park/task/').getAbsolutePath()
+//        }
+    }
+}
+task release(dependsOn: 'propsToTmp') {
+    doLast {
+        copy {
+            from rootProject.file("config/release/application.properties").getAbsolutePath(), rootProject.file("config/release/jdbc.properties").getAbsolutePath()
+            into project.file('src/main/webapp/WEB-INF/config/properties/').getAbsolutePath()
+        }
+        copy {
+            from rootProject.file("config/release/log4j2.xml").getAbsolutePath()
+            into project.file('src/main/resources/').getAbsolutePath()
+        }
+//        copy {
+//            from rootProject.file("config/release/spring.xml").getAbsolutePath()
+//            into project.file('src/main/webapp/WEB-INF/config/spring/').getAbsolutePath()
+//        }
+    }
+}
+task releaselz(dependsOn: 'propsToTmp') {
+    doLast {
+        copy {
+            from rootProject.file("config/release-lz/application.properties").getAbsolutePath(), rootProject.file("config/release-lz/jdbc.properties").getAbsolutePath()
+            into project.file('src/main/webapp/WEB-INF/config/properties/').getAbsolutePath()
+        }
+        copy {
+            from rootProject.file("config/release-lz/log4j2.xml").getAbsolutePath()
+            into project.file('src/main/resources/').getAbsolutePath()
+        }
+//        copy {
+//            from rootProject.file("config/release-lz/spring.xml").getAbsolutePath()
+//            into project.file('src/main/webapp/WEB-INF/config/spring/').getAbsolutePath()
+//        }
+    }
+}
+task resetProps() {
+    doLast {
+        copy {
+            from rootProject.file("${buildDir}/tmp/properties/application.properties").getAbsolutePath(), rootProject.file("${buildDir}/tmp/properties/jdbc.properties").getAbsolutePath()
+            into project.file('src/main/webapp/WEB-INF/config/properties/').getAbsolutePath()
+        }
+        copy {
+            from rootProject.file("${buildDir}/tmp/properties/log4j2.xml").getAbsolutePath()
+            into project.file('src/main/resources/').getAbsolutePath()
+        }
+    }
+}
+
+task propsToTmp(type: Copy) {
+    from project.file('src/main/resources/log4j2.xml').getAbsolutePath(), project.file("src/main/webapp/WEB-INF/config/properties/application.properties").getAbsolutePath(), project.file("src/main/webapp/WEB-INF/config/properties/jdbc.properties").getAbsolutePath()
+    into project.file("${buildDir}/tmp/properties").getAbsolutePath()
+}
+
+task alphaWar(type: War, dependsOn: 'alpha', group: 'app') {
+    archiveName = 'stopcar.war'
+    doLast {
+        resetProps.execute()
+    }
+}
+
+task betaWar(type: War, dependsOn: 'beta', group: 'app') {
+    archiveName = 'stopcar.war'
+    doLast {
+        resetProps.execute()
+    }
+}
+task betalfWar(type: War, dependsOn: 'betalf', group: 'app') {
+    archiveName = 'stopcar.war'
+    doLast {
+        resetProps.execute()
+    }
+}
+
+task releaseWar(type: War, dependsOn: 'release', group: 'app') {
+    archiveName = 'stopcar.war'
+    doLast {
+        resetProps.execute()
+    }
+}
+task releaselzWar(type: War, dependsOn: 'releaselz', group: 'app') {
+    archiveName = 'stopcar.war'
+    doLast {
+        resetProps.execute()
+    }
+}
+
+compileJava.mustRunAfter alpha, beta, release, releaselz
+
+war {
+    archiveName = 'stopcar.war'
+}

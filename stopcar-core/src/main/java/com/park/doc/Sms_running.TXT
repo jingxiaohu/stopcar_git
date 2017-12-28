@@ -1,0 +1,14 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|Id||int|
+|sms_tel||String|
+|sms_content||String|
+|sms_stat|失败还是成功1-成功，0失败|int|
+|sms_type|1-自定义短信0-程序员自定义短信|int|
+|sms_user|发送用户|String|
+|sms_user_name|发送用户|String|
+|server_state|服务端的状态码|String|
+|sms_date||String|
+|note||String|
+

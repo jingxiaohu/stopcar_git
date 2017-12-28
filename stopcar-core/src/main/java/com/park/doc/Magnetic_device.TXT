@@ -1,0 +1,17 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id||long|
+|pi_id|停车场主键ID|long|
+|area_code|地址编码|String|
+|gov_num|政府拟定的车位编码（例如：ASD123）|String|
+|car_dev_num|车位设备编码|String|
+|android_dev_num|android板子设备编码|String|
+|state|车位设备状态（0：无车1：有车2：故障）|int|
+|ctime|创建时间|java.util.Date|
+|utime|修改时间|java.util.Date|
+|ptime|上次推送时间|java.util.Date|
+|note|备注|String|
+|fault_count|设备故障计数器（当设备恢复正常后需要进行清零）|int|
+|is_del|是否删除（0：正常1：删除（逻辑删除））|int|
+

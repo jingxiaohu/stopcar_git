@@ -1,0 +1,6 @@
+rootProject.name = 'stopcar_springmvc'
+include ':stopcar-core'
+include ':stopcar-gate'
+include ':stopcar-app'
+include ':stopcar-pda'
+include ':stopcar'

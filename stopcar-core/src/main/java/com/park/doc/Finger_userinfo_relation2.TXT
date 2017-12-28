@@ -1,0 +1,17 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|fur_id|主键ID|long|
+|fu_id|指纹用户基本信息表主键ID（外键）|long|
+|fu_nd|指纹用户基本信息表(finger_userinfo)ND|String|
+|fingerprint|用户指纹|String|
+|finger_veno|用户指静脉|String|
+|fingerprint_hash|用户指纹图片hash|String|
+|finger_veno_hash|用户指静脉图片hash|String|
+|is_del|是否删除(0:正常1：删除)|int|
+|ctime|创建时间|java.util.Date|
+|utime|修改时间|java.util.Date|
+|note|备注|String|
+|fingerprint_img|用户指纹图片URL|String|
+|finger_veno_img|用户指静脉图片URL|String|
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Alpha log配置-->
+<Configuration status="WARN">
+  <Properties>
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSSZ} %level %thread %c %m%n</Property>
+    <Property name="JSON_REQUEST_LOG_PATTERN">%m%n</Property>
+    <Property name="LOG_PATH">log</Property>
+  </Properties>
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+      <MarkerFilter marker="REQUESTLOG" onMatch="DENY" onMismatch="ACCEPT"/>
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+    </Console>
+    <RollingRandomAccessFile name="sysfile" fileName="${LOG_PATH}/sys"
+      filePattern="${LOG_PATH}/sys_%d{yyyy-MM-dd}-%i.zip">
+      <MarkerFilter marker="REQUESTLOG" onMatch="DENY" onMismatch="ACCEPT"/>
+      <JSONLayout eventEol="true" compact="true"/>
+      <Policies>
+        <!--<OnStartupTriggeringPolicy/>-->
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min" compressionLevel="9"/>
+    </RollingRandomAccessFile>
+    <RollingRandomAccessFile name="requestfile" fileName="${LOG_PATH}/request"
+      filePattern="${LOG_PATH}/request_%d{yyyy-MM-dd}-%i.zip">
+      <MarkerFilter marker="REQUESTLOG" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout pattern="${JSON_REQUEST_LOG_PATTERN}"/>
+      <Policies>
+        <!--<OnStartupTriggeringPolicy/>-->
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10" fileIndex="min" compressionLevel="9"/>
+    </RollingRandomAccessFile>
+    <SMTP name="mail" subject="吾泊开发接口:发生了错误" to="wuyongping@qc-wbo.com"
+      from="postman@qc-wbo.com"
+      smtpUsername="postman@qc-wbo.com" smtpPassword="4XmuxiTKJnYjZitG"
+      smtpHost="smtp.qc-wbo.com" smtpPort="25" bufferSize="1">
+      <HtmlLayout/>
+      <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+    </SMTP>
+    <!--<Socket name="socket" host="127.0.0.1" port="9500">-->
+    <!--<MarkerFilter marker="USERLOG" onMatch="ACCEPT" onMismatch="DENY"/>-->
+    <!--<PatternLayout pattern="${JSON_REQUEST_LOG_PATTERN}"/>-->
+    <!--</Socket>-->
+  </Appenders>
+
+  <Loggers>
+    <AsyncRoot level="DEBUG">
+      <AppenderRef ref="console"/>
+      <AppenderRef ref="sysfile" level="INFO"/>
+      <AppenderRef ref="requestfile"/>
+      <!--<AppenderRef ref="mail"/>-->
+    </AsyncRoot>
+
+    <AsyncLogger name="com.alibaba" level="INFO"/>
+    <AsyncLogger name="org.apache" level="INFO"/>
+    <AsyncLogger name="org.quartz" level="WARN"/>
+    <AsyncLogger name="cn.jiguang.common.connection.NativeHttpClient" level="FATAL"/>
+    <AsyncLogger name="org.springframework" level="WARN"/>
+    <AsyncLogger name="org.hibernate.validator" level="WARN"/>
+    <AsyncLogger name="net.sf" level="WARN"/>
+
+  </Loggers>
+
+</Configuration>

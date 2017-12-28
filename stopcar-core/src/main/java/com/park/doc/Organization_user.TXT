@@ -1,0 +1,17 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id||int|
+|user_id|4-10位的数字和字母(不区分大小写)，创建时用户自己填写，需做唯一性校验，用作登陆用户名|String|
+|name|用户的昵称|String|
+|password||String|
+|privilege_id|指向权限表|int|
+|status|用户的状态，如可用，不可用|byte|
+|gender|用户的性别|byte|
+|create_time|此用户被创建的时间|long|
+|update_time||long|
+|user_phone|电话号码|String|
+|user_email|邮件|String|
+|error_count|登录错误次数|int|
+|error_date|登录错误发生的日期例如2017-08-07|String|
+

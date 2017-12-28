@@ -1,0 +1,17 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|pa_id|主键ID|long|
+|pi_id|停车场主键ID|long|
+|area_code|区域代码|String|
+|pi_name|停车场名称|String|
+|secret_key|授权加密key|String|
+|state|授权状态(0:未知1：成功授权2：授权失败)|int|
+|duration|授权使用时长（单位小时）|int|
+|last_time|上次授权成功时间|java.util.Date|
+|encrypt_type|加密方式（1RSA2DES3MD5）|int|
+|is_del|是否开启或者关闭（0：正常1：关闭）|int|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|note|备注|String|
+

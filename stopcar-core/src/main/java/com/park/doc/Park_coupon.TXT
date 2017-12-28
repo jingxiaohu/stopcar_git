@@ -1,0 +1,16 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|name||String|
+|money|优惠券金额(单位分)|int|
+|discount|折扣券折数|double|
+|high_money|最高抵扣金额|int|
+|end_time|有效期到期时间|java.util.Date|
+|use_range|使用范围0：爱泊车场通用1：其它车场使用|int|
+|pc_type|优惠券类型0:金额券1：折扣券|int|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|note|备注|String|
+|ai_id|活动基本信息表主键ID（外键）|long|
+

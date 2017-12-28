@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>stopcar_springmvc</groupId>
+  <artifactId>stopcar_springmvc</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <modules>
+    <module>stopcar-core</module>
+    <module>stopcar-gate</module>
+    <module>stopcar-app</module>
+    <module>stopcar-pda</module>
+    <module>stopcar</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>stopcar_springmvc-1.0</name>
+  <description>吾泊停车接口</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <activiti.version>5.17.0</activiti.version>
+    <spring.version>4.3.3.RELEASE</spring.version>
+    <log4j.version>2.6.2</log4j.version>
+  </properties>
+
+
+  <repositories>
+    <repository>
+      <id>mavenCentral</id>
+      <name>mavenCentral</name>
+      <url>http://repo.maven.apache.org/maven2</url>
+    </repository><repository>
+      <id>bestwu</id>
+      <name>bestwu</name>
+      <url>https://dl.bintray.com/bestwu/maven</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>

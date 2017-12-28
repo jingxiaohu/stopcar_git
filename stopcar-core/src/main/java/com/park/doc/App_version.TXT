@@ -1,0 +1,16 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|cav_version|渠道版本|String|
+|cav_version_external|渠道外部版本|String|
+|cav_version_code|渠道版本内部编号|int|
+|ctime|创建时间|java.util.Date|
+|content|版本更新内容|String|
+|cav_md5|版本MD5文件效验码|String|
+|android_url|Android_app版本升级包URL地址|String|
+|ios_url|Ios_app版本升级包URL地址|String|
+|is_forced|是否强制更新0：不强制更新1：强制更新|int|
+|note|备注|String|
+|type|类型0：Android手机APP1：ios手机APP2：PDA|int|
+

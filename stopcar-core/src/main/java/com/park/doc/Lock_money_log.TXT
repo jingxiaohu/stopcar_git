@@ -1,0 +1,16 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|ui_id|用户主键ID|long|
+|ui_nd|用户UUID|String|
+|type|类型0：预约1：取消预约2：租赁|int|
+|state|处理结果状态0:成功1：失败|int|
+|money|金额(单位分)|int|
+|orderid|订单号|String|
+|oder_type|订单类型0:预约1：租赁|int|
+|pi_id|停车场ID|long|
+|area_code|区域代码|String|
+|ctime|创建时间|java.util.Date|
+|note|备注|String|
+

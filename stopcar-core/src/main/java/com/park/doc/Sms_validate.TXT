@@ -1,0 +1,12 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|v_tel|手机号|String|
+|v_code|验证码6位数字|String|
+|v_list|随机码v_code的MD5|String|
+|v_class|什么类型的短信验证码1：注册2：重置密码3:修改手机|String|
+|v_time|验证时间|long|
+|v_time_str|时间字符串|String|
+|note||String|
+

@@ -1,0 +1,17 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|id|主键ID|long|
+|device_id|设备基本信息表主键ID|long|
+|mac|PDA设备MAC|String|
+|pda_sn|PDA设备串号|String|
+|device_name|设备名称(例如：普通占到停车PDA，地磁android板)|String|
+|device_type|设备类型(0:未指定1：PDA2：地磁android板)|int|
+|pi_id|关联的停车场ID|long|
+|area_code|关联的停车场地址编码|String|
+|pi_name|停车场名称|String|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|vnum|当前内部版本号|int|
+|note|备注|String|
+

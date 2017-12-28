@@ -1,0 +1,13 @@
+#########返回字段说明
+|名称|描述|类型|
+|----|----|---|
+|pda_c_id|主键ID|long|
+|name|渠道名称|String|
+|intro|渠道简介|String|
+|is_open|是否开启0:不开启1：开启|int|
+|father_id|父渠道ID|long|
+|is_delete|是否删除0:不删除1：删除|int|
+|ctime|创建时间|java.util.Date|
+|utime|更新时间|java.util.Date|
+|note|备注|String|
+

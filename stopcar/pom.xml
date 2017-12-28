@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>stopcar_springmvc</groupId>
+    <artifactId>stopcar_springmvc</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>stopcar</artifactId>
+  <packaging>war</packaging>
+
+  <description>合并APP、道闸、PDA项目</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>stopcar_springmvc</groupId>
+      <artifactId>stopcar-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>stopcar_springmvc</groupId>
+      <artifactId>stopcar-app</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>stopcar_springmvc</groupId>
+      <artifactId>stopcar-pda</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>stopcar_springmvc</groupId>
+      <artifactId>stopcar-gate</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.el</artifactId>
+      <version>3.0.1-b08</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>cn.bestwu.gradle</groupId>
+      <artifactId>dbscript-plugin</artifactId>
+      <version>0.0.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>cn.bestwu.gradle</groupId>
+      <artifactId>apidoc-plugin</artifactId>
+      <version>1.2.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>2.4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!--<plugin>-->
+        <!--<groupId>org.codehaus.gmaven</groupId>-->
+        <!--<artifactId>gmaven-plugin</artifactId>-->
+        <!--<version>1.3</version>-->
+        <!--<executions>-->
+
+          <!--<execution>-->
+            <!--<goals>-->
+              <!--&lt;!&ndash;-->
+<!--<goal>generateStubs</goal>-->
+<!--<goal>compile</goal>-->
+<!--&ndash;&gt;-->
+              <!--<goal>generateTestStubs</goal>-->
+              <!--<goal>testCompile</goal>-->
+            <!--</goals>-->
+
+            <!--<configuration>-->
+              <!--<debug>true</debug>-->
+              <!--<verbose>true</verbose>-->
+              <!--<stacktrace>true</stacktrace>-->
+              <!--<defaultScriptExtension>.groovy</defaultScriptExtension>-->
+              <!--<providerSelection>1.7</providerSelection>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12.4</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

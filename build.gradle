@@ -1,0 +1,43 @@
+plugins {
+    id 'idea'
+    id 'java'
+    id 'cn.bestwu.propdeps' version '0.0.10'
+    id 'com.bmuschko.tomcat' version '2.2.5'
+    id 'org.zeroturnaround.gradle.jrebel' version '1.1.5'
+}
+
+idea {
+    module {
+        jdkName = '1.7'
+
+        inheritOutputDirs = false
+
+        downloadJavadoc = false
+        downloadSources = true
+    }
+}
+
+allprojects {
+    apply plugin: 'maven'
+    apply plugin: 'cn.bestwu.propdeps'
+
+    group = 'stopcar_springmvc'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+
+    repositories {
+        mavenLocal()
+        maven { url "http://repo.maven.apache.org/maven2" }
+        maven { url "https://dl.bintray.com/bestwu/maven" }
+    }
+
+}
